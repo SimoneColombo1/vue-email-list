@@ -5,26 +5,26 @@ createApp({
   data() {
     return {
        
-        mail: ''
+        
+        mails: [],
     }
   },
      methods: {
         getData(){
-               
+           for(let i=0; i<10 ; i++){  
             axios.get('https://flynn.boolean.careers/exercises/api/random/mail')
                        
                
               
 
-                                       .then((response) => {
-                                        console.log(response);
-                                        this.mail = response.data.mail;
-                                       
+                                       .then((Email) => {
+                                    
+                                        this.mails.push(Email.data.response)
                                        
                                        });
+                                     
                                        
-                                       
-                        
+                        }  
 
 
 
